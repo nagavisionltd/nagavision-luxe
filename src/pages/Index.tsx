@@ -573,9 +573,22 @@ function Contact() {
                 <Input id="email" type="email" required className="mt-2 bg-background/60 border-border h-12 rounded-xl" placeholder="you@brand.com" />
               </div>
             </div>
-            <div>
-              <label htmlFor="company" className="text-xs uppercase tracking-widest text-muted-foreground">Company</label>
-              <Input id="company" className="mt-2 bg-background/60 border-border h-12 rounded-xl" placeholder="Brand or company" />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div>
+                <label htmlFor="company" className="text-xs uppercase tracking-widest text-muted-foreground">Company</label>
+                <Input id="company" className="mt-2 bg-background/60 border-border h-12 rounded-xl" placeholder="Brand or company" />
+              </div>
+              <div>
+                <label htmlFor="budget" className="text-xs uppercase tracking-widest text-muted-foreground">Estimated Budget</label>
+                <select id="budget" name="budget" defaultValue="" className="mt-2 w-full bg-background/60 border border-border h-12 rounded-xl px-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                  <option value="" disabled>Select a range</option>
+                  <option value="<5k">Under £5k</option>
+                  <option value="5-15k">£5k – £15k</option>
+                  <option value="15-50k">£15k – £50k</option>
+                  <option value="50k+">£50k+</option>
+                  <option value="unsure">Not sure yet</option>
+                </select>
+              </div>
             </div>
             <div>
               <label htmlFor="message" className="text-xs uppercase tracking-widest text-muted-foreground">Project</label>
