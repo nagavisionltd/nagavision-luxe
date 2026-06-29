@@ -66,9 +66,9 @@ const testimonials = [
 
 const faqs = [
   { q: "How is NagaVision different from a traditional agency?", a: "We blend a film-grade production studio with AI content systems, so brands get both craft and velocity — without the overhead of a legacy agency." },
-  { q: "Do you work with startups or only enterprise brands?", a: "Both. We've shipped for funded startups, scaling DTC brands, and global enterprises. Pricing scales with scope, not ego." },
-  { q: "Can you handle full-funnel creative — from strategy to ads?", a: "Yes. We cover strategy, production, AI generation, social, paid creative, and the automation that ties it all together." },
-  { q: "How long does a typical project take?", a: "Discovery in a week. First creative in two to four weeks. Always-on systems live within 30–60 days." },
+  { q: "Do I need to be a funded startup to work with you?", a: "Not at all. We work with early-stage founders, creators, scaling DTC brands and established companies. Scope flexes to your stage — momentum matters more than runway." },
+  { q: "Can you handle full-funnel creative — from strategy to ads?", a: "Yes. We cover strategy, production, AI generation, social, paid creative, web, apps and the automation that ties it all together." },
+  { q: "How fast can you actually move?", a: "First creative in 48 hours. MVP within 7 days. All systems live and tested within 30 days. We're built for velocity without cutting craft." },
   { q: "Do you license footage or build owned assets?", a: "Everything we deliver is fully owned by you — including AI-generated work — unless explicitly stated otherwise." },
 ];
 
