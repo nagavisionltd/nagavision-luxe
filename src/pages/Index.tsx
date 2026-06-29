@@ -246,7 +246,7 @@ function Services() {
             </h2>
           </div>
           <p className="text-muted-foreground max-w-md">
-            Nine disciplines, one team. We move between film sets and AI pipelines without losing craft.
+            Twelve disciplines, one team. We move between film sets, AI pipelines and product builds without losing craft.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
