@@ -407,40 +407,88 @@ function Metrics() {
 }
 
 function Pricing() {
-  const tiers = [
-    { name: "Launch", price: "From $4.5k", desc: "For new brands shipping their first signature campaign.", features: ["Brand & creative direction", "1 commercial shoot day", "AI content starter kit", "30-day support"] },
-    { name: "Scale", price: "From $12k/mo", desc: "Always-on content engine for growth-stage brands.", features: ["Monthly production day", "AI content pipeline", "Social + paid creative", "Performance reporting"], featured: true },
-    { name: "Bespoke", price: "Custom", desc: "Enterprise-grade systems and integrated AI workflows.", features: ["Dedicated creative team", "Custom AI tooling", "Multi-market rollouts", "Strategic partnership"] },
+  const phases = [
+    { icon: Zap, day: "Day 1–2", title: "First Creative", desc: "Within 48 hours of kickoff, your first signature asset lands — proof of direction, not a deck." },
+    { icon: Rocket, day: "Day 3–7", title: "MVP Live", desc: "By day seven, your campaign, page or product MVP is live and ready for the real world to react to." },
+    { icon: Target, day: "Day 8–30", title: "Systems Live & Tested", desc: "By day thirty, every system — content, automation, web, AI — is shipped, tested and earning attention." },
+  ];
+  const includes = [
+    "Founder-led creative direction",
+    "Cinematic production + AI content engine",
+    "Web, app or campaign MVP shipped",
+    "Automation wired end-to-end",
+    "Weekly 1:1 momentum reviews",
+    "Full ownership of every asset",
   ];
   return (
-    <section id="pricing" className="py-28 md:py-40">
+    <section id="pricing" className="py-28 md:py-40 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-radial-gold opacity-40 -z-10" />
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs tracking-[0.3em] uppercase text-gold">— Pricing</span>
+          <span className="text-xs tracking-[0.3em] uppercase text-gold">— Reality Sprint</span>
           <h2 className="font-display text-4xl md:text-6xl mt-4 tracking-tight font-light">
-            Flexible scopes. <em className="text-gradient-gold not-italic font-medium">Premium outcomes.</em>
+            Flexible scopes. <em className="text-gradient-gold not-italic font-medium">Shipped in 30 days.</em>
           </h2>
-          <p className="mt-6 text-muted-foreground">Every engagement is custom-scoped. Below is a teaser — your quote is built around your goals.</p>
+          <p className="mt-6 text-muted-foreground">
+            One focused, founder-led engagement. No bloated decks, no endless revisions —
+            just decisions, movement and momentum. First creative in 48 hours. MVP in 7 days.
+            All systems live and tested in 30.
+          </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {tiers.map((t) => (
-            <div key={t.name} className={`relative rounded-3xl p-8 border transition-all hover-lift ${t.featured ? "bg-gradient-to-b from-gold/10 to-card border-gold/40 shadow-gold" : "bg-card border-border"}`}>
-              {t.featured && <span className="absolute -top-3 left-1/2 -translate-x-1/2 text-[10px] tracking-widest uppercase px-3 py-1 rounded-full bg-gradient-gold text-primary-foreground font-medium">Most Loved</span>}
-              <h3 className="font-display text-2xl font-medium">{t.name}</h3>
-              <div className="mt-2 font-display text-4xl text-gradient-gold">{t.price}</div>
-              <p className="mt-3 text-sm text-muted-foreground">{t.desc}</p>
-              <ul className="mt-6 space-y-3">
-                {t.features.map((f) => (
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+          {phases.map((p, i) => (
+            <motion.div
+              key={p.title}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+              className="relative rounded-3xl p-8 bg-card border border-border hover:border-gold/40 transition-all hover-lift overflow-hidden"
+            >
+              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
+              <div className="flex items-center justify-between mb-6">
+                <span className="h-12 w-12 rounded-2xl bg-gold/10 border border-gold/30 flex items-center justify-center">
+                  <p.icon className="h-5 w-5 text-gold" />
+                </span>
+                <span className="text-[10px] tracking-[0.25em] uppercase text-gold/80">{p.day}</span>
+              </div>
+              <h3 className="font-display text-2xl font-medium mb-3">{p.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="relative rounded-3xl p-8 md:p-12 bg-gradient-to-b from-gold/10 to-card border border-gold/40 shadow-gold">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div className="lg:col-span-7">
+              <span className="text-[10px] tracking-[0.25em] uppercase px-3 py-1 rounded-full bg-gradient-gold text-primary-foreground font-medium">The Sprint</span>
+              <h3 className="font-display text-3xl md:text-5xl mt-5 tracking-tight font-light leading-[1.05]">
+                One investment. <em className="text-gradient-gold not-italic font-medium">Thirty days.</em><br/>A reality you can sell.
+              </h3>
+              <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
+                {includes.map((f) => (
                   <li key={f} className="flex items-start gap-2 text-sm">
                     <Check className="h-4 w-4 text-gold mt-0.5 shrink-0" /> <span>{f}</span>
                   </li>
                 ))}
               </ul>
-              <Button asChild className={`mt-8 w-full rounded-full ${t.featured ? "bg-gradient-gold text-primary-foreground hover:opacity-90" : "bg-secondary hover:bg-muted text-foreground"}`}>
-                <a href="#contact">Get a custom quote</a>
-              </Button>
             </div>
-          ))}
+            <div className="lg:col-span-5 lg:border-l lg:border-gold/20 lg:pl-10">
+              <p className="text-xs tracking-[0.25em] uppercase text-muted-foreground">Investment</p>
+              <div className="mt-2 font-display text-5xl md:text-6xl text-gradient-gold">Custom</div>
+              <p className="mt-3 text-sm text-muted-foreground">
+                Scope flexes to your stage — from solo founders to scaling brands.
+                We'll quote a clear number on your discovery call.
+              </p>
+              <Button asChild size="lg" className="mt-8 w-full rounded-full bg-gradient-gold text-primary-foreground hover:opacity-90 shadow-gold h-14 text-base">
+                <a href="#contact"><Calendar className="mr-2 h-4 w-4" /> Book a Discovery Call</a>
+              </Button>
+              <p className="mt-3 text-xs text-muted-foreground text-center">
+                Not a free strategy session. Diagnosis + direction.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
