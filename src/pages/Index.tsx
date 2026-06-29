@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
   Sparkles, Film, Camera, Users, Image as ImageIcon, Video, Compass,
-  PenTool, Bot, ArrowRight, ArrowUpRight, Calendar, Mail,
-  Instagram, Linkedin, Youtube, Plus, Minus, Play, Check, Menu, X
+  PenTool, Bot, ArrowRight, ArrowUpRight, Calendar, Mail, Layout, Gamepad2, Smartphone,
+  Instagram, Linkedin, Youtube, Plus, Minus, Play, Check, Menu, X, Zap, Rocket, Target
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
