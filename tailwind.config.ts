@@ -12,8 +12,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Fraunces", "serif"],
-        sans: ["Inter", "system-ui", "sans-serif"],
+        display: ['"Inter Tight"', "-apple-system", "BlinkMacSystemFont", '"SF Pro Display"', "system-ui", "sans-serif"],
+        sans: ['"Inter Tight"', "-apple-system", "BlinkMacSystemFont", '"SF Pro Text"', "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
