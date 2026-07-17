@@ -148,9 +148,22 @@ function Hero() {
   const y = useTransform(scrollY, [0, 600], [0, 120]);
   const opacity = useTransform(scrollY, [0, 400], [1, 0.3]);
   return (
-    <section id="top" className="relative min-h-dvh overflow-hidden bg-gradient-hero pt-32 pb-20">
+    <section id="top" className="relative min-h-dvh overflow-hidden bg-background pt-32 pb-20">
       <motion.div style={{ y, opacity }} className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-radial-gold" />
+        <video
+          src={heroBgVideo.url}
+          poster={heroReel}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-background/55" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/30 to-background" />
+        <div className="absolute inset-0 bg-gradient-radial-gold opacity-70" />
       </motion.div>
       <div className="container relative">
         <motion.div
