@@ -14,6 +14,7 @@ import {
 import { toast } from "sonner";
 
 import heroReel from "@/assets/hero-reel.jpg";
+import heroBgVideo from "@/assets/hero-bg.mp4.asset.json";
 import gProduct from "@/assets/gallery-product.jpg";
 import gLifestyle from "@/assets/gallery-lifestyle.jpg";
 import gStudio from "@/assets/gallery-studio.jpg";
