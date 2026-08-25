@@ -21,12 +21,16 @@ import gStudio from "@/assets/gallery-studio.jpg";
 import gAction from "@/assets/gallery-action.jpg";
 import gAi from "@/assets/gallery-ai.jpg";
 import gUgc from "@/assets/gallery-ugc.jpg";
+import irisBlob from "@/assets/iris-blob.jpg";
+import irisHorizon from "@/assets/iris-horizon.jpg";
 
 const nav = [
+  { label: "Advisory", href: "#advisory" },
   { label: "Services", href: "#services" },
   { label: "Work", href: "#work" },
-  { label: "Process", href: "#process" },
-  { label: "Pricing", href: "#pricing" },
+  { label: "Ecosystem", href: "#ecosystem" },
+  { label: "30-Day Build", href: "#build" },
+  { label: "Team", href: "#team" },
   { label: "FAQ", href: "#faq" },
 ];
 
@@ -98,11 +102,9 @@ function NavBar() {
       <div className="container">
         <div className={`flex items-center justify-between rounded-full px-5 md:px-7 py-3 transition-all duration-500 ${scrolled ? "glass-strong shadow-elegant" : "bg-transparent"}`}>
           <a href="#top" className="flex items-center gap-2 focus-ring" aria-label="NagaVision home">
-            <span className="relative inline-flex h-7 w-7 items-center justify-center rounded-full bg-gradient-gold">
-              <span className="absolute inset-0.5 rounded-full bg-background" />
-              <span className="relative font-display text-sm font-bold text-gold">N</span>
+            <span className="font-display text-[13px] font-extrabold uppercase leading-[0.85] tracking-tight">
+              Naga<br />Vision
             </span>
-            <span className="font-display text-lg font-semibold tracking-tight">NagaVision</span>
           </a>
           <nav className="hidden md:flex items-center gap-8" aria-label="Primary">
             {nav.map((n) => (
@@ -820,13 +822,11 @@ function Footer() {
     <footer className="border-t border-border/50 py-12">
       <div className="container flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div className="flex items-center gap-2">
-          <span className="relative inline-flex h-7 w-7 items-center justify-center rounded-full bg-gradient-gold">
-            <span className="absolute inset-0.5 rounded-full bg-background" />
-            <span className="relative font-display text-sm font-bold text-gold">N</span>
+          <span className="font-display text-[13px] font-extrabold uppercase leading-[0.85] tracking-tight">
+            Naga<br />Vision
           </span>
-          <span className="font-display text-lg">NagaVision</span>
         </div>
-        <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} NagaVision Studio. All rights reserved.</p>
+        <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} NagaVision. Strategic. Cinematic. Technological. Human.</p>
         <div className="flex gap-6 text-xs text-muted-foreground">
           <a href="#" className="hover:text-foreground">Privacy</a>
           <a href="#" className="hover:text-foreground">Terms</a>
@@ -845,8 +845,12 @@ export default function Index() {
       <Logos />
       <Services />
       <Gallery />
+      <Manifesto />
+      <Ladder />
+      <ThirtyDayBuild />
       <Process />
       <Metrics />
+      <Machine />
       <Pricing />
       <FAQ />
       <Contact />
