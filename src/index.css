@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,54 +6,56 @@
 
 @layer base {
   :root {
-    --background: 0 0% 4%;
-    --foreground: 40 30% 96%;
+    --background: 0 0% 3%;
+    --foreground: 0 0% 98%;
 
     --card: 0 0% 6%;
-    --card-foreground: 40 30% 96%;
+    --card-foreground: 0 0% 98%;
 
     --popover: 0 0% 6%;
-    --popover-foreground: 40 30% 96%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 42 60% 58%;
-    --primary-foreground: 0 0% 4%;
+    --primary: 271 91% 65%;
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 10%;
-    --secondary-foreground: 40 30% 96%;
+    --secondary-foreground: 0 0% 98%;
 
     --muted: 0 0% 12%;
-    --muted-foreground: 40 10% 65%;
+    --muted-foreground: 0 0% 64%;
 
-    --accent: 42 60% 58%;
-    --accent-foreground: 0 0% 4%;
+    --accent: 271 91% 65%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 70% 50%;
-    --destructive-foreground: 40 30% 96%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 40 15% 18%;
-    --input: 40 15% 18%;
-    --ring: 42 60% 58%;
+    --border: 0 0% 16%;
+    --input: 0 0% 16%;
+    --ring: 271 91% 65%;
 
     --radius: 1rem;
 
-    --gold: 42 60% 58%;
-    --gold-light: 44 80% 72%;
-    --gold-dark: 38 55% 42%;
+    /* Iridescent brand spectrum — indigo → violet → magenta */
+    --gold: 271 91% 68%;
+    --gold-light: 330 85% 68%;
+    --gold-dark: 243 75% 59%;
 
-    --gradient-gold: linear-gradient(135deg, hsl(44 80% 72%), hsl(42 60% 58%), hsl(38 55% 42%));
-    --gradient-radial-gold: radial-gradient(circle at 50% 50%, hsl(42 60% 58% / 0.25), transparent 60%);
-    --gradient-hero: radial-gradient(ellipse at top, hsl(42 60% 58% / 0.18), transparent 55%), linear-gradient(180deg, hsl(0 0% 4%), hsl(0 0% 2%));
-    --shadow-gold: 0 20px 60px -20px hsl(42 60% 58% / 0.45);
-    --shadow-elegant: 0 30px 80px -30px hsl(0 0% 0% / 0.6);
+    --gradient-gold: linear-gradient(120deg, hsl(243 80% 62%), hsl(271 91% 68%), hsl(330 85% 66%));
+    --gradient-radial-gold: radial-gradient(circle at 50% 50%, hsl(271 91% 65% / 0.22), transparent 62%);
+    --gradient-hero: radial-gradient(ellipse at top, hsl(271 91% 65% / 0.20), transparent 58%), linear-gradient(180deg, hsl(0 0% 3%), hsl(0 0% 2%));
+    --shadow-gold: 0 20px 60px -20px hsl(271 91% 65% / 0.5);
+    --shadow-elegant: 0 30px 80px -30px hsl(0 0% 0% / 0.65);
 
-    --sidebar-background: 0 0% 4%;
-    --sidebar-foreground: 40 30% 96%;
-    --sidebar-primary: 42 60% 58%;
-    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-background: 0 0% 3%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 271 91% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 0 0% 10%;
-    --sidebar-accent-foreground: 40 30% 96%;
-    --sidebar-border: 40 15% 18%;
-    --sidebar-ring: 42 60% 58%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 16%;
+    --sidebar-ring: 271 91% 65%;
+
   }
 }
 
@@ -64,12 +66,14 @@
     @apply bg-background text-foreground font-sans;
     font-feature-settings: "ss01", "cv11";
   }
-  ::selection { background: hsl(var(--gold) / 0.3); color: hsl(var(--foreground)); }
+  ::selection { background: hsl(var(--gold) / 0.35); color: hsl(var(--foreground)); }
 }
 
 @layer utilities {
   .font-display { font-family: 'Inter Tight', -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif; letter-spacing: -0.02em; }
   .font-sans { font-family: 'Inter Tight', -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; }
+  .font-editorial { font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif; font-style: italic; letter-spacing: -0.01em; }
+
 
   .text-gold { color: hsl(var(--gold)); }
   .bg-gold { background-color: hsl(var(--gold)); }
@@ -147,7 +151,7 @@
 .animate-float { animation: float 6s ease-in-out infinite; }
 
 .shimmer-text {
-  background: linear-gradient(90deg, hsl(40 30% 96%) 0%, hsl(42 80% 70%) 50%, hsl(40 30% 96%) 100%);
+  background: linear-gradient(90deg, hsl(0 0% 98%) 0%, hsl(271 91% 72%) 35%, hsl(330 85% 68%) 65%, hsl(0 0% 98%) 100%);
   background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;

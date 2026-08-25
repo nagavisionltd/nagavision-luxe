@@ -21,12 +21,16 @@ import gStudio from "@/assets/gallery-studio.jpg";
 import gAction from "@/assets/gallery-action.jpg";
 import gAi from "@/assets/gallery-ai.jpg";
 import gUgc from "@/assets/gallery-ugc.jpg";
+import irisBlob from "@/assets/iris-blob.jpg";
+import irisHorizon from "@/assets/iris-horizon.jpg";
 
 const nav = [
+  { label: "Advisory", href: "#advisory" },
   { label: "Services", href: "#services" },
   { label: "Work", href: "#work" },
-  { label: "Process", href: "#process" },
-  { label: "Pricing", href: "#pricing" },
+  { label: "Ecosystem", href: "#ecosystem" },
+  { label: "30-Day Build", href: "#build" },
+  { label: "Team", href: "#team" },
   { label: "FAQ", href: "#faq" },
 ];
 
@@ -98,11 +102,9 @@ function NavBar() {
       <div className="container">
         <div className={`flex items-center justify-between rounded-full px-5 md:px-7 py-3 transition-all duration-500 ${scrolled ? "glass-strong shadow-elegant" : "bg-transparent"}`}>
           <a href="#top" className="flex items-center gap-2 focus-ring" aria-label="NagaVision home">
-            <span className="relative inline-flex h-7 w-7 items-center justify-center rounded-full bg-gradient-gold">
-              <span className="absolute inset-0.5 rounded-full bg-background" />
-              <span className="relative font-display text-sm font-bold text-gold">N</span>
+            <span className="font-display text-[13px] font-extrabold uppercase leading-[0.85] tracking-tight">
+              Naga<br />Vision
             </span>
-            <span className="font-display text-lg font-semibold tracking-tight">NagaVision</span>
           </a>
           <nav className="hidden md:flex items-center gap-8" aria-label="Primary">
             {nav.map((n) => (
@@ -509,7 +511,204 @@ function Pricing() {
   );
 }
 
+function Manifesto() {
+  return (
+    <section id="advisory" className="py-28 md:py-40 relative overflow-hidden">
+      <div className="container grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+        <div className="lg:col-span-6">
+          <span className="text-xs tracking-[0.3em] uppercase text-gold">— NagaVision Advisory</span>
+          <h2 className="font-display text-4xl md:text-6xl mt-5 tracking-tight font-semibold leading-[0.95] uppercase">
+            Most founders don't need<br />another consultant.
+          </h2>
+          <p className="font-editorial text-3xl md:text-4xl mt-5 text-gradient-gold">
+            They need someone who can see the whole board.
+          </p>
+          <p className="mt-6 text-muted-foreground max-w-lg leading-relaxed">
+            And critically — someone who can actually build it. Strategic clarity, creative direction
+            and technology for founders building the future. No beige rectangles. No PDF reports.
+            You leave with brand, product and systems people can see, touch and believe in.
+          </p>
+          <div className="mt-10 flex flex-wrap gap-2">
+            {["Strategic", "Cinematic", "Technological", "Human"].map((k) => (
+              <span key={k} className="glass rounded-full px-4 py-2 text-xs tracking-[0.2em] uppercase text-muted-foreground">{k}</span>
+            ))}
+          </div>
+        </div>
+        <div className="lg:col-span-6">
+          <motion.img
+            src={irisBlob}
+            alt="Iridescent 3D form representing NagaVision's creative technology"
+            loading="lazy" width={1280} height={1280}
+            initial={{ opacity: 0, scale: 0.94 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 1.1, ease: [0.2, 0.8, 0.2, 1] }}
+            className="w-full max-w-xl mx-auto animate-float select-none"
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const ladder = [
+  { n: "01", title: "Clarity", price: "£195–£295", desc: "One high-impact conversation. Immediate direction, no fluff." },
+  { n: "02", title: "Reality Sprint", price: "£5,000 / 30 days", desc: "Flagship. Diagnose bottlenecks, define the opportunity, build the roadmap.", featured: true },
+  { n: "03", title: "Transformation", price: "£10,000–£20,000+", desc: "Strategy, brand identity and a working prototype — the next version, built." },
+  { n: "04", title: "The Launchpad", price: "£5,000–£10,000+", desc: "Idea → investor ready. Narrative, pitch deck, funding roadmap, go-to-market." },
+  { n: "05", title: "Advisory Retainer", price: "£1,500–£5,000/mo", desc: "Your external innovation department. Ongoing strategic and technical leadership." },
+  { n: "06", title: "The Boardroom", price: "£5,000–£15,000+", desc: "1–2 day executive intervention. AI opportunity map + 90-day execution plan." },
+  { n: "07", title: "Venture Partnership", price: "Equity / revenue share", desc: "For exceptional opportunities we build alongside you — cash, equity or rev-share." },
+];
+
+function Ladder() {
+  return (
+    <section id="ecosystem" className="py-28 md:py-40 bg-card/20 border-y border-border/50">
+      <div className="container">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+          <div>
+            <span className="text-xs tracking-[0.3em] uppercase text-gold">— The Ecosystem</span>
+            <h2 className="font-display text-4xl md:text-6xl mt-4 max-w-2xl tracking-tight font-semibold uppercase leading-[0.95]">
+              From diagnosis to<br />venture partnership.
+            </h2>
+          </div>
+          <p className="text-muted-foreground max-w-md">
+            We scale our involvement based on the ambition of the idea. Built around outcomes, not hours.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {ladder.map((l, i) => (
+            <motion.div
+              key={l.title}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.6, delay: i * 0.05 }}
+              className={`group relative rounded-3xl p-8 overflow-hidden hover-lift transition-all duration-500 ${l.featured ? "bg-gradient-to-b from-primary/15 to-card border border-primary/40 shadow-gold" : "bg-card border border-border hover:border-primary/40"}`}
+            >
+              {l.featured && (
+                <span className="absolute top-6 right-6 text-[10px] tracking-[0.25em] uppercase px-3 py-1 rounded-full bg-gradient-gold text-primary-foreground">Flagship</span>
+              )}
+              <span className="font-display text-sm text-gold">{l.n}</span>
+              <h3 className="font-display text-2xl md:text-3xl mt-4 font-semibold">{l.title}</h3>
+              <p className="mt-2 font-editorial text-xl text-gradient-gold">{l.price}</p>
+              <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{l.desc}</p>
+              <a href="#contact" className="mt-6 inline-flex items-center text-xs text-muted-foreground group-hover:text-gold transition-colors">
+                Enquire <ArrowUpRight className="ml-1 h-3 w-3" />
+              </a>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const buildWeeks = [
+  { w: "Week 1", title: "Discover", desc: "Vision, market analysis and commercial strategy. Where are you, and what's actually happening?" },
+  { w: "Week 2", title: "Define", desc: "Brand, proposition and product architecture. What's possible, and what needs to change?" },
+  { w: "Week 3", title: "Build", desc: "Technical execution — prototypes, websites and AI integrated into a working system." },
+  { w: "Week 4", title: "Launch", desc: "Demo, pitch, funding narrative and go-to-market plan. Something people can believe in." },
+];
+
+function ThirtyDayBuild() {
+  return (
+    <section id="build" className="relative py-28 md:py-40 overflow-hidden">
+      <img src={irisHorizon} alt="" aria-hidden="true" loading="lazy" width={1600} height={912} className="absolute inset-0 h-full w-full object-cover opacity-40" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/70 to-background" />
+      <div className="container relative">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="text-xs tracking-[0.3em] uppercase text-gold">— The Killer Concept</span>
+          <h2 className="font-display text-5xl md:text-7xl mt-5 tracking-tight font-semibold uppercase leading-[0.9]">
+            The 30-Day <span className="text-gradient-gold">Build</span>
+          </h2>
+          <p className="mt-6 text-lg text-muted-foreground">
+            Give us an idea. Give us 30 days. We'll turn it into something people can see, touch and believe in.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          {buildWeeks.map((b, i) => (
+            <motion.div
+              key={b.w}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+              className="glass rounded-3xl p-8"
+            >
+              <p className="text-[10px] tracking-[0.3em] uppercase text-gold">{b.w}</p>
+              <h3 className="font-display text-3xl mt-4 font-semibold">{b.title}</h3>
+              <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{b.desc}</p>
+              <div className="mt-6 h-px w-full bg-gradient-gold opacity-60" />
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const people = [
+  {
+    tag: "Creative & Innovation",
+    name: "Curtis Soul",
+    role: "Creative Strategist & Innovation Advisor",
+    bio: "I help ambitious founders turn ideas into brands, products and businesses people can believe in.",
+    skills: ["Vision", "Brand", "Product concepts", "Creative direction", "Storytelling", "AI strategy", "Experience design"],
+  },
+  {
+    tag: "Commercial & Funding",
+    name: "Dr Jack",
+    role: "Commercial Strategy & Performance",
+    bio: "The commercial teeth. Diagnosis, commercial strategy and operating models for elite growth.",
+    skills: ["Commercial strategy", "Funding strategy", "Investor readiness", "Business model", "Growth strategy", "Founder performance"],
+  },
+];
+
+function Machine() {
+  return (
+    <section id="team" className="py-28 md:py-40 bg-card/20 border-y border-border/50">
+      <div className="container">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="font-display text-4xl md:text-6xl tracking-tight font-semibold uppercase leading-[0.95]">
+            Two sides of the<br />same machine.
+          </h2>
+          <p className="font-editorial text-2xl md:text-3xl mt-5 text-gradient-gold">
+            Business intelligence meets creative intelligence.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {people.map((p, i) => (
+            <motion.div
+              key={p.name}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+              className="rounded-3xl p-8 md:p-10 bg-card border border-border hover:border-primary/40 transition-colors"
+            >
+              <p className="text-[10px] tracking-[0.3em] uppercase text-gold">{p.tag}</p>
+              <h3 className="font-display text-3xl md:text-4xl mt-4 font-semibold">{p.name}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{p.role}</p>
+              <p className="mt-6 text-base leading-relaxed">{p.bio}</p>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {p.skills.map((s) => (
+                  <span key={s} className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground">{s}</span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+        <p className="mt-8 text-center text-sm text-muted-foreground">
+          <span className="text-foreground font-medium">Powered by NagaVision:</span> technology, working MVPs, websites, AI tools and interactive prototypes.
+        </p>
+      </div>
+    </section>
+  );
+}
+
 function FAQ() {
+
   return (
     <section id="faq" className="py-28 md:py-40 bg-card/20">
       <div className="container grid grid-cols-1 md:grid-cols-12 gap-12">
@@ -623,13 +822,11 @@ function Footer() {
     <footer className="border-t border-border/50 py-12">
       <div className="container flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div className="flex items-center gap-2">
-          <span className="relative inline-flex h-7 w-7 items-center justify-center rounded-full bg-gradient-gold">
-            <span className="absolute inset-0.5 rounded-full bg-background" />
-            <span className="relative font-display text-sm font-bold text-gold">N</span>
+          <span className="font-display text-[13px] font-extrabold uppercase leading-[0.85] tracking-tight">
+            Naga<br />Vision
           </span>
-          <span className="font-display text-lg">NagaVision</span>
         </div>
-        <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} NagaVision Studio. All rights reserved.</p>
+        <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} NagaVision. Strategic. Cinematic. Technological. Human.</p>
         <div className="flex gap-6 text-xs text-muted-foreground">
           <a href="#" className="hover:text-foreground">Privacy</a>
           <a href="#" className="hover:text-foreground">Terms</a>
@@ -648,8 +845,12 @@ export default function Index() {
       <Logos />
       <Services />
       <Gallery />
+      <Manifesto />
+      <Ladder />
+      <ThirtyDayBuild />
       <Process />
       <Metrics />
+      <Machine />
       <Pricing />
       <FAQ />
       <Contact />
