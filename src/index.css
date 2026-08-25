@@ -72,6 +72,8 @@
 @layer utilities {
   .font-display { font-family: 'Inter Tight', -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif; letter-spacing: -0.02em; }
   .font-sans { font-family: 'Inter Tight', -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; }
+  .font-editorial { font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif; font-style: italic; letter-spacing: -0.01em; }
+
 
   .text-gold { color: hsl(var(--gold)); }
   .bg-gold { background-color: hsl(var(--gold)); }
